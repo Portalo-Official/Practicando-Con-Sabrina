@@ -16,7 +16,7 @@ public class GestorPublicaciones {
 
 	public Boolean addPublicacion(Publicacion publicacion) {
 		// Si publicaion = null
-		if (publicacion != null) {
+		if (!this.publicaciones.containsKey(publicacion.getTitulo()) && publicacion != null) {
 			if (this.publicaciones.put(publicacion.getTitulo(), publicacion) != null) {
 				return true;
 			}
